@@ -1,7 +1,8 @@
-import React from "react";
-import Link from 'next/link';
+import React from 'react';
+import ItemList from './item-list';
 
-const item1 = {
+export default function ItemList(){
+  const item1 = {
     name: "milk, 4 L 🥛",
     quantity: 1,
     category: "dairy",
@@ -72,3 +73,12 @@ const item1 = {
     quantity: 4,
     category: "household",
   };
+
+  const shoppingList = [item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12]
+
+  return (
+    <main className=''>
+      
+    </main>
+  );
+}

@@ -2,9 +2,10 @@ import React from 'react';
 
 const Item = ({ name, quantity, category }) => {
   return (
-    <li className="flex justify-between mb-2">
-      <span className="text-lg">{name}</span>
-      <span className="text-sm text-gray-600">{quantity} x {category}</span>
+    <li className="p-4 border-b border-gray-300">
+      <div className="font-bold text-lg">{name}</div>
+      <div className="text-sm text-gray-600">Quantity: {quantity}</div>
+      <div className="text-sm text-gray-600">Category: {category}</div>
     </li>
   );
 };

@@ -110,3 +110,12 @@
 //       <button type="submit">Submit</button>
 //     </form>
 //   ); */}
+
+{
+  /* <script>
+        function myFunction(){" "}
+        {alert(
+          "Name: ${name}, Quantity: ${quantity}, Category: ${category}\nare added to your basket!"
+        )}
+      </script> */
+}

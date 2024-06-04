@@ -5,13 +5,14 @@ export default function NewItem() {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState("produce");
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setMessage(
-      "Added items in your basket: Name: ${name}, Quantity: ${quantity}, Category: ${category}!"
-    );
+    // setMessage(
+    //   "Added items in your basket: Name: ${name}, Quantity: ${quantity}, Category: ${category}!"
+    // );
+    alert(`Name: ${name}, Quantity: ${quantity}, Category: ${category}`);
     setName("");
     setQuantity(1);
     setCategory("produce");
@@ -21,7 +22,7 @@ export default function NewItem() {
     <div className=" flex flex-col items-center justify-center p-4">
       <form
         onSubmit={handleSubmit}
-        className="border border-blue-200 p-6 rounded w-full max-w-md"
+        className="bg-gray-700 p-6 rounded w-full max-w-md"
       >
         <div className="mb-4">
           <label htmlFor="name" className="block text-black-700 mb-2">
@@ -33,7 +34,7 @@ export default function NewItem() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="w-full px-3 py-2 border rounded"
+            className="w-full px-3 py-2 border rounded text-black"
           />
         </div>
         <div className="mb-4">
@@ -48,7 +49,7 @@ export default function NewItem() {
             min="1"
             max="99"
             required
-            className="w-full px-3 py-2 border rounded"
+            className="w-full px-3 py-2 border rounded text-black"
           />
         </div>
         <div className="mb-4">
@@ -60,7 +61,7 @@ export default function NewItem() {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             required
-            className="w-full px-3 py-2 border rounded"
+            className="w-full px-3 py-2 border rounded text-black"
           >
             <option value="" disabled>
               Category
@@ -85,11 +86,6 @@ export default function NewItem() {
           Submit
         </button>
       </form>
-      {message && (
-        <div className="mt-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative">
-          <span className="block sm:inline">{message}</span>
-        </div>
-      )}
     </div>
   );
 }

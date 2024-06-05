@@ -12,7 +12,9 @@ export default function NewItem() {
     // setMessage(
     //   "Added items in your basket: Name: ${name}, Quantity: ${quantity}, Category: ${category}!"
     // );
-    alert(`Name: ${name}, Quantity: ${quantity}, Category: ${category}`);
+    alert(
+      `Name: ${name}, Quantity: ${quantity}, Category: ${category}\nare added to the shopping cart :D`
+    );
     setName("");
     setQuantity(1);
     setCategory("produce");
@@ -22,7 +24,7 @@ export default function NewItem() {
     <div className=" flex flex-col items-center justify-center p-4">
       <form
         onSubmit={handleSubmit}
-        className="bg-gray-700 p-6 rounded w-full max-w-md"
+        className="bg-gradient-to-r from-cyan-500 to-blue-500 p-6 rounded w-full max-w-md"
       >
         <div className="mb-4">
           <label htmlFor="name" className="block text-black-700 mb-2">

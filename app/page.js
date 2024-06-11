@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function Home() {
-  const weekDemos = [1, 2, 3, 4];
+  const weekDemos = [1, 2, 3, 4, 5];
   const doneUpTo = 10;
 
   return (

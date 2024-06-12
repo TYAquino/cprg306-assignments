@@ -51,11 +51,12 @@ const ItemList = () => {
   return (
     <div>
       <div className="flex justify-center space-x-4 mb-4">
+        <p className="mt-2">Sort by:</p>
         <button
           onClick={handleSortByName}
           className={`px-4 py-2 text-lg font-bold ${
             sortBy === "name" ? "bg-orange-500" : "bg-red-500"
-          } text-black hover:scale-110 transition duration-300 ease-in-out`}
+          } text-black hover:scale-110 transition duration-300 ease-in-out border rounded`}
         >
           Name
         </button>
@@ -63,7 +64,7 @@ const ItemList = () => {
           onClick={handleSortByCategory}
           className={`px-4 py-2 text-lg font-bold ${
             sortBy === "category" ? "bg-orange-500" : "bg-red-500"
-          } text-black hover:scale-110 transition duration-300 ease-in-out`}
+          } text-black hover:scale-110 transition duration-300 ease-in-out border rounded`}
         >
           Category
         </button>
@@ -71,7 +72,7 @@ const ItemList = () => {
           onClick={handleGroupByCategory}
           className={`px-4 py-2 text-lg font-bold ${
             sortBy === "grouped category" ? "bg-orange-500" : "bg-red-500"
-          } text-black hover:scale-110 transition duration-300 ease-in-out`}
+          } text-black hover:scale-110 transition duration-300 ease-in-out border rounded`}
         >
           Grouped Category
         </button>
@@ -81,7 +82,7 @@ const ItemList = () => {
           ? sortedItems().map((group) => (
               <li
                 key={group.category}
-                className="capitalize text-center text-black-600"
+                className="capitalize text-black-600 text-center"
               >
                 <h2>{group.category}</h2>
                 <ul>

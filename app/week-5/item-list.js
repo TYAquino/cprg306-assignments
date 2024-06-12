@@ -11,6 +11,8 @@ const ItemList = () => {
       return a.name.localeCompare(b.name);
     } else if (sortBy === "category") {
       return a.category.localeCompare(b.category);
+    } else if (sortBy === "grouped category") {
+      return a.category.localeCompare(b.groupedCategory);
     }
     return 0;
   });
@@ -28,14 +30,23 @@ const ItemList = () => {
       <div>
         <button
           onClick={handleSortByName}
-          style={{ backgroundColor: sortBy === "name" ? "lightblue" : "white" }}
+          style={{
+            backgroundColor: sortBy === "name" ? "orange" : "red",
+            fontSize: "18px",
+            fontColor: "black",
+            padding: "10px 20px",
+            margin: "5px",
+          }}
         >
           Name
         </button>
         <button
           onClick={handleSortByCategory}
           style={{
-            backgroundColor: sortBy === "category" ? "lightblue" : "white",
+            backgroundColor: sortBy === "category" ? "orange" : "red",
+            fontSize: "18px",
+            padding: "10px 20px",
+            margin: "5px",
           }}
         >
           Category

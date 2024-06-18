@@ -84,7 +84,12 @@ const ItemList = () => {
                 key={group.category}
                 className="capitalize text-black-600 text-center"
               >
-                <h2>{group.category}</h2>
+                <div className="w-full flex items-center justify-center">
+                  <div className="w-[320px] flex items-center justify-start">
+                    <h2>{group.category}</h2>
+                  </div>
+                </div>
+
                 <ul>
                   {group.items.map((item) => (
                     <Item key={item.id} {...item} />

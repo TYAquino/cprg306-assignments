@@ -8,7 +8,7 @@ export default function Page() {
   const [items, setItems] = useState(itemsData);
 
   const handleAddItem = (newItem) => {
-    newItem.id = Date.now();
+    // newItem.id = Date.now();
     setItems((prevItems) => [...prevItems, newItem]);
   };
 

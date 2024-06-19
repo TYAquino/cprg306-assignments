@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function NewItem({ onAddItem }) {
+const NewItem = ({ onAddItem }) => {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState("produce");
@@ -87,4 +87,6 @@ export default function NewItem({ onAddItem }) {
       </form>
     </div>
   );
-}
+};
+
+export default NewItem;

@@ -13,10 +13,6 @@ export default function ItemList({ items }) {
     setSortBy("category");
   };
 
-  const handleGroupByCategory = () => {
-    setSortBy("grouped category");
-  };
-
   const sortedItems = () => {
     if (sortBy === "name") {
       return [...items].sort((a, b) => a.name.localeCompare(b.name));
@@ -66,14 +62,6 @@ export default function ItemList({ items }) {
           } text-black hover:scale-110 transition duration-300 ease-in-out border rounded`}
         >
           Category
-        </button>
-        <button
-          onClick={handleGroupByCategory}
-          className={`px-4 py-2 text-lg font-bold ${
-            sortBy === "grouped category" ? "bg-orange-500" : "bg-red-500"
-          } text-black hover:scale-110 transition duration-300 ease-in-out border rounded`}
-        >
-          Grouped Category
         </button>
       </div>
       <ul>

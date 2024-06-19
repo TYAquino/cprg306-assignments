@@ -8,10 +8,8 @@ export default function NewItem({ onAddItem }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(
-      `Name: ${name}, Quantity: ${quantity}, Category: ${category}\nare added to the shopping cart :D`
-    );
-    onAddItem(NewItem);
+    const newItem = { name, quantity, category };
+    onAddItem(newItem);
     setName("");
     setQuantity(1);
     setCategory("produce");
@@ -78,12 +76,14 @@ export default function NewItem({ onAddItem }) {
             <option value="Other">Other</option>
           </select>
         </div>
-        <button
-          type="submit"
-          className="bg-violet-800 text-white px-4 py-2 rounded"
-        >
-          Submit
-        </button>
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            className="w-full bg-violet-800 text-white px-4 py-2 rounded"
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );

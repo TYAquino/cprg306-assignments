@@ -4,11 +4,10 @@ import NewItem from "./new-item";
 import ItemList from "./item-list";
 import itemsData from "./items.json";
 
-export default function Page() {
-  const [items, setItems] = useState(itemsData);
+export default function Page({ shoppingList = itemsData }) {
+  const [items, setItems] = useState(shoppingList);
 
   const handleAddItem = (newItem) => {
-    // newItem.id = Date.now();
     setItems((prevItems) => [...prevItems, newItem]);
   };
 

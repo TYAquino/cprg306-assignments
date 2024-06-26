@@ -8,7 +8,7 @@ export default function Page({ shoppingList = itemsData }) {
   const [items, setItems] = useState(shoppingList);
 
   const handleAddItem = (newItem) => {
-    setItems((prevItems) => [...prevItems, newItem]);
+    setItems([...items, newItem]);
     console.log(items);
   };
 

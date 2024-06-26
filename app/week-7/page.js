@@ -10,7 +10,7 @@ export default function Page() {
   const [selectedItemName, setSelectedItemName] = useState("");
 
   const handleAddItem = (newItem) => {
-    setItems((prevItems) => [...prevItems, newItem]);
+    setItems([...shoppingList, newItem]);
   };
 
   const handleItemSelect = (item) => {

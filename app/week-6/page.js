@@ -9,6 +9,7 @@ export default function Page({ shoppingList = itemsData }) {
 
   const handleAddItem = (newItem) => {
     setItems((prevItems) => [...prevItems, newItem]);
+    console.log(items);
   };
 
   return (

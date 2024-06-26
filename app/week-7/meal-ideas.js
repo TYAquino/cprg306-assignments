@@ -23,24 +23,22 @@ export default function MealIdeas({ ingredient }) {
     }
   }, [ingredient]);
 
-  if (!ingredient) {
-    return <p className="text-lg">Select an item to see meal ideas :D</p>;
-  }
-
-  if (meals.length === 0) {
-    return <p className="text-lg">No meal ideas for {ingredient}</p>;
-  }
-
   return (
     <div className="max-w-md mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Meal Ideas</h2>
-      <ul className="list-none mb-0">
-        {meals.map((meal) => (
-          <li key={meal.idMeal} className="py-2 border-b border-gray-200">
-            {meal.strMeal}
-          </li>
-        ))}
-      </ul>
+      {!ingredient ? (
+        <p className="text-lg">Select an item to see meal ideas :D</p>
+      ) : meals.length === 0 ? (
+        <p className="text-lg">No meal ideas for {ingredient}</p>
+      ) : (
+        <ul className="list-none mb-0">
+          {meals.map((meal) => (
+            <li key={meal.idMeal} className="py-2 border-b border-gray-200">
+              {meal.strMeal}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Item from "./item";
 
 export default function ItemList({ items }) {
   const [sortBy, setSortBy] = useState("name");

@@ -13,36 +13,6 @@ export default function ItemList({ items, onItemSelect }) {
     setSortBy("category");
   };
 
-  // const sortedItems = () => {
-  //   if (sortBy === "name") {
-  //     return [...items].sort((a, b) => a.name.localeCompare(b.name));
-  //   } else if (sortBy === "category") {
-  //     return [...items].sort((a, b) => a.category.localeCompare(b.category));
-  //   } else if (sortBy === "grouped category") {
-  //     const grouped = items.reduce((acc, item) => {
-  //       if (!acc[item.category]) {
-  //         acc[item.category] = [];
-  //       }
-  //       acc[item.category].push(item);
-  //       return acc;
-  //     }, {});
-
-  //     const sortedGrouped = Object.keys(grouped)
-  //       .sort()
-  //       .map((category) => {
-  //         return {
-  //           category,
-  //           items: grouped[category].sort((a, b) =>
-  //             a.name.localeCompare(b.name)
-  //           ),
-  //         };
-  //       });
-
-  //     return sortedGrouped;
-  //   }
-  //   return items;
-  // };
-
   const sortedItems = () => {
     if (sortBy === "name") {
       return [...items].sort((a, b) => a.name.localeCompare(b.name));

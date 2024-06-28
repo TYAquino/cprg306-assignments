@@ -29,7 +29,7 @@ export default function MealIdeas({ ingredient }) {
       {!ingredient ? (
         <p className="text-lg">Select an item to see meal ideas :D</p>
       ) : meals.length === 0 ? (
-        <p className="text-lg">No meal ideas for {ingredient}</p>
+        <p className="text-lg">No meal ideas for {ingredient} 😔</p>
       ) : (
         <ul className="list-none mb-0">
           {meals.map((meal) => (

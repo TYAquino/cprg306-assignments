@@ -15,13 +15,13 @@ export default function Page() {
 
   useEffect(() => {
     if (!user) {
-      router.push("/week-8");
+      router.push("./week-8");
     }
   }, [user, router]);
 
   const handleSignIn = async () => {
     await gitHubSignIn();
-    router.push("/week-8/shopping-list");
+    router.push("./week-8/shopping-list");
   };
 
   const handleSignOut = async () => {

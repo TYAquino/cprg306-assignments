@@ -9,7 +9,7 @@ export default function HomePage() {
 
   const handleSignIn = async () => {
     await gitHubSignIn();
-    router.push("/week-8/shopping-list");
+    router.push("./week-8/shopping-list");
   };
 
   const handleSignOut = async () => {

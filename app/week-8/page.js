@@ -3,7 +3,7 @@ import { useUserAuth } from "./shopping-list/_utils/auth-context";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export default function HomePage() {
+export default function Page() {
   const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
   const router = useRouter();
 

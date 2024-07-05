@@ -20,7 +20,7 @@ export default function Page() {
   }, [user, router]);
 
   const handleAddItem = (newItem) => {
-    setItems([...shoppingList, newItem]);
+    setItems([...items, newItem]);
   };
 
   const handleItemSelect = (item) => {

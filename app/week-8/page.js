@@ -44,16 +44,16 @@ export default function Page() {
                 Logout
               </button>
             </div>
+            <div>
+              <Link
+                href="/week-8/shopping-list"
+                className="text-lg text-green-600 hover:underline"
+              >
+                Go to Shopping List
+              </Link>
+            </div>
           </div>
         )}
-        <div>
-          <Link
-            href="/week-8/shopping-list"
-            className="text-lg text-green-600 hover:underline"
-          >
-            Go to Shopping List
-          </Link>
-        </div>
       </div>
     </div>
   );

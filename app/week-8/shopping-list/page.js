@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useUserAuth } from "./_utils/auth-context";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import NewItem from "./new-item";
 import ItemList from "./item-list";
 import itemsData from "./items.json";
@@ -11,17 +11,11 @@ export default function Page() {
   const [items, setItems] = useState(itemsData);
   const [selectedItemName, setSelectedItemName] = useState("");
   const { user } = useUserAuth();
-
-  const useCustomRouter = () => {
-    const router = useRouter();
-    return router;
-  };
-
-  const customRouter = useCustomRouter();
+  const router = useRouter();
 
   useEffect(() => {
     if (!user) {
-      customRouter.push("./week-8");
+      router.push("./week-8");
     }
   }, [user, router]);
 
@@ -46,15 +40,14 @@ export default function Page() {
   }
 
   return (
-    <main className="p-8 bg-teal-500 min-h-screen">
-      <h1 className="text-xl font-bold mb-4">Shopping List</h1>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div>
+    <main className="p-8 min-h-screen">
+      <div className="flex">
+        <div className="w-1/2 p-4">
           <NewItem onAddItem={handleAddItem} />
           <ItemList items={items} onItemSelect={handleItemSelect} />
         </div>
-        <div className="flex flex-col items-left w-1/4 p-4">
-          {selectedItemName && <MealIdeas ingredient={selectedItemName} />}
+        <div className="w-1/2 p-4">
+          <MealIdeas ingredient={selectedItemName} />
         </div>
       </div>
     </main>

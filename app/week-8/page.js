@@ -49,7 +49,7 @@ export default function Page() {
         <div>
           <Link
             href="/week-8/shopping-list"
-            className="text-green-500 hover:underline"
+            className="text-green-600 hover:underline"
           >
             Go to Shopping List
           </Link>

@@ -4,8 +4,8 @@ import { useUserAuth } from "./_utils/auth-context";
 import { useRouter } from "next/navigation";
 import NewItem from "./new-item";
 import ItemList from "./item-list";
-import itemsData from "./items.json";
 import MealIdeas from "./meal-ideas";
+import { getItem, addItem } from "../_services/shopping-list-services";
 
 export default function Page() {
   const [items, setItems] = useState(itemsData);
@@ -19,8 +19,40 @@ export default function Page() {
     }
   }, [user, router]);
 
-  const handleAddItem = (newItem) => {
-    setItems([...items, newItem]);
+  useEffect(() => {
+    const loadItems = async () => {
+      if (user) {
+        try {
+          const itemsList = await getItem(user.uid);
+          setItems(itemsList);
+        } catch (error) {
+          console.error("Error loading items: ", error);
+        }
+      }
+    };
+    loadItems();
+  }, [user]);
+
+  const handleAddItem = async (newItem) => {
+    if (user) {
+      try {
+        const newItemId = await addItem(user.uid, newItem);
+        setItems([...items, { id: newItemId, ...newItem }]);
+      } catch (error) {
+        console.error("Error adding item:", error);
+      }
+    }
+  };
+
+  const handleDeleteItem = async (itemId) => {
+    if (user) {
+      try {
+        await deleteItem(user.uid, itemId);
+        setItems(items.filter((item) => items.id !== itemId));
+      } catch (error) {
+        console.error("Error deleting this item: ", error);
+      }
+    }
   };
 
   const handleItemSelect = (item) => {

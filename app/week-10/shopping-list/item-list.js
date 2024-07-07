@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Item from "./item";
 
-export default function ItemList({ items, onItemSelect }) {
+export default function ItemList({ items, onItemSelect, onDeleteItem }) {
   const [sortBy, setSortBy] = useState("name");
 
   const handleSortByName = () => {
@@ -45,7 +45,15 @@ export default function ItemList({ items, onItemSelect }) {
       </div>
       <ul>
         {sortedItems().map((item) => (
-          <Item key={item.id} {...item} onselect={() => onItemSelect(item)} />
+          <li key={item.id} className="flex justify-between items-center mb-2">
+            <Item {...item} onselect={() => onItemSelect(item)} />
+            <button
+              onClick={() => onDeleteItem(item.id)}
+              className="ml-4 px-2 py-1 text-sm font-bold bg-red-500 text-black hover:scale-110 transition duration-300 ease-in-out border rounded"
+            >
+              Delete
+            </button>
+          </li>
         ))}
       </ul>
     </div>

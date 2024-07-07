@@ -76,7 +76,11 @@ export default function Page() {
       <div className="flex">
         <div className="w-1/2 p-4">
           <NewItem onAddItem={handleAddItem} />
-          <ItemList items={items} onItemSelect={handleItemSelect} />
+          <ItemList
+            items={items}
+            onItemSelect={handleItemSelect}
+            onDeleteItem={handleDeleteItem}
+          />
         </div>
         <div className="w-1/2 p-4">
           <MealIdeas ingredient={selectedItemName} />

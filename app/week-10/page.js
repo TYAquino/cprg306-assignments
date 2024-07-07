@@ -1,6 +1,5 @@
 "use client";
 import { useUserAuth } from "./shopping-list/_utils/auth-context";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
@@ -9,7 +8,7 @@ export default function Page() {
 
   const handleSignIn = async () => {
     await gitHubSignIn();
-    router.push("./week-8/shopping-list");
+    router.push("./week-10/shopping-list");
   };
 
   const handleSignOut = async () => {
@@ -38,19 +37,19 @@ export default function Page() {
             <p className="text-black mb-3">{user.email}</p>
             <div>
               <button
-                onClick={handleSignOut}
-                className="bg-pink-500 mb-3 text-white px-4 py-2 rounded-md w-1/2 hover:scale-110 transition duration-300 ease-in-out"
+                onClick={handleSignIn}
+                className="bg-green-500 mb-3 text-white text-lg px-4 py-2 rounded-md w-1/2 hover:scale-110 transition duration-300 ease-in-out"
               >
-                Logout
+                Go to Shopping List
               </button>
             </div>
             <div>
-              <Link
-                href="/week-8/shopping-list"
-                className="text-lg text-green-600 hover:underline"
+              <button
+                onClick={handleSignOut}
+                className="bg-pink-500 mb-3 text-white text-lg px-4 py-2 rounded-md w-1/2 hover:scale-110 transition duration-300 ease-in-out"
               >
-                Go to Shopping List
-              </Link>
+                Logout
+              </button>
             </div>
           </div>
         )}

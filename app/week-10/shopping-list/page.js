@@ -5,7 +5,11 @@ import { useRouter } from "next/navigation";
 import NewItem from "./new-item";
 import ItemList from "./item-list";
 import MealIdeas from "./meal-ideas";
-import { getItem, addItem } from "../_services/shopping-list-services";
+import {
+  getItem,
+  addItem,
+  deleteItem,
+} from "../_services/shopping-list-services";
 
 export default function Page() {
   const [items, setItems] = useState(itemsData);
@@ -15,7 +19,7 @@ export default function Page() {
 
   useEffect(() => {
     if (!user) {
-      router.push("./week-8");
+      router.push("./week-10");
     }
   }, [user, router]);
 
@@ -48,7 +52,7 @@ export default function Page() {
     if (user) {
       try {
         await deleteItem(user.uid, itemId);
-        setItems(items.filter((item) => items.id !== itemId));
+        setItems(items.filter((item) => item.id !== itemId));
       } catch (error) {
         console.error("Error deleting this item: ", error);
       }

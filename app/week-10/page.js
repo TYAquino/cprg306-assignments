@@ -16,7 +16,7 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-violet-600 to-blue-800 h-48 w-full flex justify-center items-center">
+    <div className="min-h-screen bg-gradient-to-r from-violet-800 to-blue-800 h-48 w-full flex justify-center items-center">
       <div className="w-100 h-70 bg-white shadow-lg rounded-lg p-6 text-center">
         <div className="text-3xl text-black font-bold mb-3">
           <h1>Welcome to the Shopping List :3</h1>

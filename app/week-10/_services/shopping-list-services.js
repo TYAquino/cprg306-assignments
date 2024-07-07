@@ -1,4 +1,4 @@
-import { db } from "../_utils/firebase";
+import { db } from "./shopping-list/_utils/firebase";
 import { collection, getDocs, addDoc, deleteDoc } from "firebase/firestore";
 
 async function getItem(userId) {

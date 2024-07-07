@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useUserAuth } from "./_utils/auth-context";
+import { useUserAuth } from "../_utils/auth-context";
 import { useRouter } from "next/navigation";
-import NewItem from "./new-item";
-import ItemList from "./item-list";
-import MealIdeas from "./meal-ideas";
+import NewItem from "./shopping-list/new-item";
+import ItemList from "./shopping-list/item-list";
+import MealIdeas from "./shopping-list/meal-ideas";
 import {
   getItem,
   addItem,

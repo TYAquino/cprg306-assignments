@@ -1,5 +1,5 @@
-import { db } from "./shopping-list/_utils/firebase";
-import { collection, getDocs, addDoc, deleteDoc } from "firebase/firestore";
+import { db } from "../_utils/firebase";
+import { collection, getDocs, addDoc, query } from "firebase/firestore";
 
 async function getItem(userId) {
   const items = [];

@@ -46,3 +46,41 @@ async function deleteItem(userId, itemId) {
 }
 
 export { getItem, addItem, deleteItem };
+
+// async function addItem(userId, item) {
+//   try {
+//     const docRef = await addDoc(collection(db, "users", userId, "items"), item);
+//     console.log("Item created with ID: ", docRef.id);
+//     return docRef.id;
+//   } catch (error) {
+//     console.error("Error adding item: ", error);
+//     return null;
+//   }
+// }
+
+// async function getItem(userId, itemId) {
+//   const items = [];
+
+//   const docRef = doc(db, "users", userId, "items", itemId);
+//   const docSnap = await getDoc(docRef);
+
+//   if (docSnap.exists()) {
+//     console.log("Item data:", docSnap.data());
+//     return docSnap.data();
+//   } else {
+//     console.log("No such item!");
+//     return null;
+//   }
+// }
+
+// async function deleteItem(userId, itemId) {
+//   const docRef = doc(db, "users", userId, "items", itemId);
+//   try {
+//     await deleteDoc(docRef);
+//     console.log("Item deleted");
+//   } catch (error) {
+//     console.error("Error deleting item: ", error);
+//   }
+// }
+
+// export { getItem, addItem, deleteItem };
